@@ -30,7 +30,7 @@
                     <div class="card-header">
                         <h4>Data</h4>
                         <div class="card-header-action">
-                            <a href="#" class="btn btn-danger">Tambah Data <i class="fas fa-chevron-right"></i></a>
+                            <a href="<?= base_url();?>index.php/mahasiswa/create" class="btn btn-danger">Tambah Data <i class="fas fa-chevron-right"></i></a>
                         </div>
                     </div>
                     <div class="card-body">
@@ -53,7 +53,10 @@
                             <td><?= $mhs->nim;?></td>
                             <td><?= $mhs->fakultas;?></td>
                             <td><?= $mhs->tahun_masuk;?></td>
-                            <td></td>
+                            <td>
+                                <a href="<?= base_url();?>index.php/mahasiswa/update/<?=$mhs->id;?>" class="btn btn-warning">Ubah</a>
+                                <a href="<?= base_url();?>index.php/mahasiswa/delete/<?=$mhs->id;?>" class="btn btn-danger">Hapus</a>
+                            </td>
                             </tr>
                             <?php }?>
                         </tbody>
@@ -65,7 +68,7 @@
             </div>
             </section>
         </div>
-        
+
         <?php $this->load->view('template/foot');?>
       
     </div>

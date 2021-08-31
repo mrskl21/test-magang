@@ -20,9 +20,9 @@ class Model_mahasiswa extends CI_Model
         return $this->db->insert($this->table, $data);
     }
 
-    public function get($id)
+    public function get($parameter)
     {
-        $this->db->where($id);
+        $this->db->where($parameter);
         return $this->db->get($this->table)->row();
     }
 

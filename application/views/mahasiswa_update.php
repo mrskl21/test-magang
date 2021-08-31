@@ -27,26 +27,27 @@
                             <h4>Formulir</h4>
                         </div>
                         <div class="card-body">
-                            <form action="<?= base_url();?>index.php/mahasiswa/add" method="POST">
+                            <form action="<?= base_url();?>index.php/mahasiswa/edit" method="POST">
                                 <div class="form-group">
                                     <label for="">Nama</label>
-                                    <input type="text" class="form-control" name="nama" required>
+                                    <input type="text" class="form-control" name="id" hidden value="<?=$data_mhs->id;?>">
+                                    <input type="text" class="form-control" name="nama" required value="<?=$data_mhs->nama;?>">
                                 </div>
                                 <div class="form-group">
                                     <label for="">NIM</label>
-                                    <input type="number" class="form-control" name="nim" required>
+                                    <input type="number" class="form-control" name="nim" required value="<?=$data_mhs->nim;?>">
                                 </div>
                                 <div class="form-group">
                                     <label for="">Fakultas</label>
                                     <select class="form-control" name="fakultas">
-                                        <option value="Kedokteran">Kedokteran</option>
-                                        <option value="Teknik">Teknik</option>
-                                        <option value="Ekonomi">Ekonomi</option>
+                                        <option <?= ($data_mhs->fakultas == "Kedokteran") ? "selected" : "" ;?> value="Kedokteran">Kedokteran</option>
+                                        <option <?= ($data_mhs->fakultas == "Teknik") ? "selected" : "" ;?> value="Teknik">Teknik</option>
+                                        <option <?= ($data_mhs->fakultas == "Ekonomi") ? "selected" : "" ;?> value="Ekonomi">Ekonomi</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
                                     <label for="">Tahun Masuk</label>
-                                    <input type="number" class="form-control" name="tahun_masuk" required>
+                                    <input type="number" class="form-control" name="tahun_masuk" required value="<?=$data_mhs->tahun_masuk;?>">
                                 </div>
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-info">Simpan</button>
