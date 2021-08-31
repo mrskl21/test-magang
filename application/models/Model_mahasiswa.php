@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Model_mahasiswa extends CI_Model
 {
-    private $table="mahasiswa";
+    private $table = "mahasiswa";
 
     public function __construct()
     {
